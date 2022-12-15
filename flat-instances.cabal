@@ -4,6 +4,11 @@ name:                flat-instances
 version:             0.1.0.0
 license-file:        LICENSE
 
+Flag flat-servant
+  Description: Enable Flat serialization support
+  Default:     True
+  Manual:      False
+
 library
   exposed-modules:
     Flat.Orphans
@@ -11,6 +16,13 @@ library
     base,
     flat,
     time,
+  if flag(flat-servant)
+    exposed-modules:
+      Flat.Servant
+    build-depends:
+      bytestring,
+      servant,
+
   hs-source-dirs:
     src
   default-language:
