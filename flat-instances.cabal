@@ -6,7 +6,7 @@ license-file:        LICENSE
 
 library
   exposed-modules:
-    Flat.Instances
+    Flat.Orphans
   build-depends:
     base,
     flat,

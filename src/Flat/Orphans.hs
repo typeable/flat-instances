@@ -1,11 +1,10 @@
 {-# LANGUAGE DerivingVia #-}
-{-# LANGUAGE NamedFieldPuns #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StandaloneDeriving #-}
 {-# OPTIONS_GHC -fno-warn-orphans #-}
 
 
-module Flat.Instances where
+module Flat.Orphans where
 
 import Data.Fixed
 import Data.Time
@@ -20,7 +19,7 @@ instance Flat DiffTime where
   size = F.size . diffTimeToPicoseconds
 
 utcTimeToTuple :: UTCTime -> (Day, DiffTime)
-utcTimeToTuple = ((,) <$> utctDay <*> utctDayTime)
+utcTimeToTuple UTCTime{..} = (utctDay, utctDayTime)
 
 instance Flat UTCTime where
   encode = F.encode . utcTimeToTuple
