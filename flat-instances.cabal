@@ -1,0 +1,30 @@
+cabal-version:       2.4
+
+name:                flat-instances
+version:             0.1.0.0
+license-file:        LICENSE
+
+library
+  exposed-modules:
+    Flat.Instances
+  build-depends:
+    base,
+    flat,
+    time,
+  hs-source-dirs:
+    src
+  default-language:
+    Haskell2010
+  -- default-extensions:
+  --   DerivingVia
+  --   StandaloneDeriving
+  --   AllowAmbiguousTypes
+  --   DeriveGeneric
+  --   DerivingStrategies
+  --   GeneralizedNewtypeDeriving
+  --   PolyKinds
+  --   RankNTypes
+  --   RoleAnnotations
+  --   ScopedTypeVariables
+  --   TypeApplications
+  --   TypeFamilies
