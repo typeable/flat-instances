@@ -3,11 +3,11 @@
 {-# LANGUAGE StandaloneDeriving #-}
 {-# OPTIONS_GHC -fno-warn-orphans #-}
 
-
 module Flat.Orphans where
 
 import Data.Fixed
 import Data.Time
+import Data.Vector
 import Flat as F
 
 
@@ -65,3 +65,5 @@ instance Flat ZonedTime where
   size   = F.size . zonedTimeToTuple
   encode = F.encode . zonedTimeToTuple
   decode = uncurry ZonedTime <$> F.decode
+
+deriving via (AsArray (Vector a)) instance Flat a => Flat (Vector a)

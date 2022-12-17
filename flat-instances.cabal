@@ -16,12 +16,13 @@ library
     base,
     flat,
     time,
+    vector
   if flag(flat-servant)
     exposed-modules:
       Flat.Servant
     build-depends:
       bytestring,
-      servant,
+      servant
 
   hs-source-dirs:
     src
